@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, ChevronRight, Award, RefreshCw, BookOpen, Layers, ShieldCheck, Briefcase, AlertCircle } from 'lucide-react';
+import { Check, X, ChevronRight, Award, RefreshCw, BookOpen, Layers, ShieldCheck, Briefcase, AlertCircle, FileText } from 'lucide-react';
 import { TOPICS } from './constants';
 import { QuizState, Topic } from './types';
 
@@ -9,7 +9,8 @@ const TopicIcons = {
   'block1': BookOpen,
   'block2': Layers,
   'block3': ShieldCheck,
-  'block4': Briefcase
+  'block4': Briefcase,
+  'block5': FileText
 };
 
 // --- Interfaces ---
@@ -166,8 +167,9 @@ const QuestionScreen: React.FC<QuestionScreenProps> = ({
         <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
           <motion.div 
             className="h-full bg-dorren-lightBlue shadow-[0_0_10px_rgba(133,206,228,0.5)]"
+            initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
           />
         </div>
       </div>
