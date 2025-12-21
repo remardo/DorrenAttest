@@ -7,6 +7,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dorren: {
+                black: '#000000',
+                darkBlue: '#183141',
+                lightBlue: '#85CEE4',
+                gray: '#254965',
+                white: '#FFFFFF'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            letterSpacing: {
+              widest: '.2em',
+              ultra: '.3em',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+      }
+      /* Custom scrollbar for dark theme */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #183141;
+        border-radius: 0;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #85CEE4;
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {
@@ -21,7 +68,7 @@
 }
 </script>
 </head>
-  <body>
+  <body class="bg-dorren-black text-white antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
